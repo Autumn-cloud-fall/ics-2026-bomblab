@@ -1,0 +1,76 @@
+Dump of assembler code for function phase_05:
+   0x0000000000402480 <+0>:     f3 0f 1e fa             endbr64
+   0x0000000000402484 <+4>:     55                      push   rbp
+   0x0000000000402485 <+5>:     48 89 e5                mov    rbp,rsp
+   0x0000000000402488 <+8>:     41 54                   push   r12
+   0x000000000040248a <+10>:    49 89 f4                mov    r12,rsi
+   0x000000000040248d <+13>:    be 02 00 00 00          mov    esi,0x2
+   0x0000000000402492 <+18>:    53                      push   rbx
+   0x0000000000402493 <+19>:    48 89 fb                mov    rbx,rdi
+   0x0000000000402496 <+22>:    48 83 ec 10             sub    rsp,0x10
+   0x000000000040249a <+26>:    e8 d1 07 00 00          call   0x402c70 <valid_u32_fields>
+   0x000000000040249f <+31>:    84 c0                   test   al,al
+   0x00000000004024a1 <+33>:    75 0d                   jne    0x4024b0 <phase_05+48>
+   0x00000000004024a3 <+35>:    31 c0                   xor    eax,eax
+   0x00000000004024a5 <+37>:    48 83 c4 10             add    rsp,0x10
+   0x00000000004024a9 <+41>:    5b                      pop    rbx
+   0x00000000004024aa <+42>:    41 5c                   pop    r12
+   0x00000000004024ac <+44>:    5d                      pop    rbp
+   0x00000000004024ad <+45>:    c3                      ret
+   0x00000000004024ae <+46>:    66 90                   xchg   ax,ax
+   0x00000000004024b0 <+48>:    31 c0                   xor    eax,eax
+   0x00000000004024b2 <+50>:    48 8d 4d e8             lea    rcx,[rbp-0x18]
+   0x00000000004024b6 <+54>:    48 8d 55 e4             lea    rdx,[rbp-0x1c]
+   0x00000000004024ba <+58>:    be 86 31 40 00          mov    esi,0x403186
+   0x00000000004024bf <+63>:    48 89 df                mov    rdi,rbx
+   0x00000000004024c2 <+66>:    e8 19 ed ff ff          call   0x4011e0 <__isoc99_sscanf@plt>
+   0x00000000004024c7 <+71>:    83 f8 02                cmp    eax,0x2
+   0x00000000004024ca <+74>:    75 d7                   jne    0x4024a3 <phase_05+35>
+   0x00000000004024cc <+76>:    48 8d 75 ec             lea    rsi,[rbp-0x14]
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x00000000004024d0 <+80>:    4c 89 e7                mov    rdi,r12
+   0x00000000004024d3 <+83>:    e8 48 ff ff ff          call   0x402420 <p5_traverse>
+   0x00000000004024d8 <+88>:    89 c2                   mov    edx,eax
+   0x00000000004024da <+90>:    31 c0                   xor    eax,eax
+   0x00000000004024dc <+92>:    39 55 e4                cmp    DWORD PTR [rbp-0x1c],edx
+   0x00000000004024df <+95>:    75 c4                   jne    0x4024a5 <phase_05+37>
+   0x00000000004024e1 <+97>:    8b 45 ec                mov    eax,DWORD PTR [rbp-0x14]
+   0x00000000004024e4 <+100>:   39 45 e8                cmp    DWORD PTR [rbp-0x18],eax
+   0x00000000004024e7 <+103>:   0f 94 c0                sete   al
+   0x00000000004024ea <+106>:   eb b9                   jmp    0x4024a5 <phase_05+37>
+End of assembler dump.
+
+Dump of assembler code for function p5_traverse:
+   0x0000000000402420 <+0>:     f3 0f 1e fa             endbr64
+   0x0000000000402424 <+4>:     48 89 f8                mov    rax,rdi
+   0x0000000000402427 <+7>:     48 89 f9                mov    rcx,rdi
+   0x000000000040242a <+10>:    49 89 f0                mov    r8,rsi
+   0x000000000040242d <+13>:    83 e0 07                and    eax,0x7
+   0x0000000000402430 <+16>:    48 c1 e9 03             shr    rcx,0x3
+   0x0000000000402434 <+20>:    48 8b 14 c5 60 5b 40 00 mov    rdx,QWORD PTR [rax*8+0x405b60]
+   0x000000000040243c <+28>:    48 89 f8                mov    rax,rdi
+   0x000000000040243f <+31>:    48 c1 ef 20             shr    rdi,0x20
+   0x0000000000402443 <+35>:    48 c1 e8 06             shr    rax,0x6
+   0x0000000000402447 <+39>:    31 f8                   xor    eax,edi
+   0x0000000000402449 <+41>:    8b 72 04                mov    esi,DWORD PTR [rdx+0x4]
+   0x000000000040244c <+44>:    89 cf                   mov    edi,ecx
+   0x000000000040244e <+46>:    35 96 0c 00 00          xor    eax,0xc96
+   0x0000000000402453 <+51>:    03 02                   add    eax,DWORD PTR [rdx]
+   0x0000000000402455 <+53>:    8d 04 80                lea    eax,[rax+rax*4]
+   0x0000000000402458 <+56>:    41 89 30                mov    DWORD PTR [r8],esi
+   0x000000000040245b <+59>:    31 f0                   xor    eax,esi
+   0x000000000040245d <+61>:    83 e7 03                and    edi,0x3
+   0x0000000000402460 <+64>:    74 1d                   je     0x40247f <p5_traverse+95>
+   0x0000000000402462 <+66>:    b9 01 00 00 00          mov    ecx,0x1
+   0x0000000000402467 <+71>:    48 8b 52 08             mov    rdx,QWORD PTR [rdx+0x8]
+   0x000000000040246b <+75>:    83 c1 01                add    ecx,0x1
+   0x000000000040246e <+78>:    8b 72 04                mov    esi,DWORD PTR [rdx+0x4]
+   0x0000000000402471 <+81>:    03 02                   add    eax,DWORD PTR [rdx]
+   0x0000000000402473 <+83>:    8d 04 80                lea    eax,[rax+rax*4]
+   0x0000000000402476 <+86>:    41 89 30                mov    DWORD PTR [r8],esi
+   0x0000000000402479 <+89>:    31 f0                   xor    eax,esi
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x000000000040247b <+91>:    39 cf                   cmp    edi,ecx
+   0x000000000040247d <+93>:    73 e8                   jae    0x402467 <p5_traverse+71>
+   0x000000000040247f <+95>:    c3                      ret
+End of assembler dump.

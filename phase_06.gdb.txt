@@ -1,0 +1,137 @@
+Dump of assembler code for function phase_06:                                                                                                           
+   0x00000000004025c0 <+0>:     f3 0f 1e fa             endbr64                                                                                         
+   0x00000000004025c4 <+4>:     55                      push   rbp                                                                                      
+   0x00000000004025c5 <+5>:     48 89 e5                mov    rbp,rsp                                                                                  
+   0x00000000004025c8 <+8>:     41 54                   push   r12                                                                                      
+   0x00000000004025ca <+10>:    49 89 f4                mov    r12,rsi                                                                                  
+   0x00000000004025cd <+13>:    be 01 00 00 00          mov    esi,0x1                                                                                  
+   0x00000000004025d2 <+18>:    53                      push   rbx                                                                                      
+   0x00000000004025d3 <+19>:    48 89 fb                mov    rbx,rdi                                                                                  
+   0x00000000004025d6 <+22>:    48 83 ec 10             sub    rsp,0x10                                                                                 
+   0x00000000004025da <+26>:    e8 91 06 00 00          call   0x402c70 <valid_u32_fields>                                                              
+   0x00000000004025df <+31>:    84 c0                   test   al,al                                                                                    
+   0x00000000004025e1 <+33>:    75 0d                   jne    0x4025f0 <phase_06+48>                                                                   
+   0x00000000004025e3 <+35>:    48 83 c4 10             add    rsp,0x10                                                                                 
+   0x00000000004025e7 <+39>:    31 c0                   xor    eax,eax                                                                                  
+   0x00000000004025e9 <+41>:    5b                      pop    rbx                                                                                      
+   0x00000000004025ea <+42>:    41 5c                   pop    r12                                                                                      
+   0x00000000004025ec <+44>:    5d                      pop    rbp                                                                                      
+   0x00000000004025ed <+45>:    c3                      ret                                                                                             
+   0x00000000004025ee <+46>:    66 90                   xchg   ax,ax                                                                                    
+   0x00000000004025f0 <+48>:    31 c0                   xor    eax,eax                                                                                  
+   0x00000000004025f2 <+50>:    48 8d 55 ec             lea    rdx,[rbp-0x14]                                                                           
+   0x00000000004025f6 <+54>:    be 89 31 40 00          mov    esi,0x403189                                                                             
+   0x00000000004025fb <+59>:    48 89 df                mov    rdi,rbx                                                                                  
+   0x00000000004025fe <+62>:    e8 dd eb ff ff          call   0x4011e0 <__isoc99_sscanf@plt>                                                           
+   0x0000000000402603 <+67>:    83 f8 01                cmp    eax,0x1                                                                                  
+   0x0000000000402606 <+70>:    75 db                   jne    0x4025e3 <phase_06+35>                                                                   
+   0x0000000000402608 <+72>:    4c 89 e7                mov    rdi,r12                                                                                  
+   0x000000000040260b <+75>:    e8 60 ff ff ff          call   0x402570 <p6_dispatch>                                                                   
+--Type <RET> for more, q to quit, c to continue without paging--c                                                                                       
+   0x0000000000402610 <+80>:    39 45 ec                cmp    DWORD PTR [rbp-0x14],eax                                                                 
+   0x0000000000402613 <+83>:    0f 94 c0                sete   al                                                                                       
+   0x0000000000402616 <+86>:    48 83 c4 10             add    rsp,0x10                                                                                 
+   0x000000000040261a <+90>:    5b                      pop    rbx                                                                                      
+   0x000000000040261b <+91>:    41 5c                   pop    r12                                                                                      
+   0x000000000040261d <+93>:    5d                      pop    rbp                                                                                      
+   0x000000000040261e <+94>:    c3                      ret                                                                                             
+End of assembler dump.
+
+
+Dump of assembler code for function p6_dispatch:
+   0x0000000000402570 <+0>:     f3 0f 1e fa             endbr64
+   0x0000000000402574 <+4>:     55                      push   rbp
+   0x0000000000402575 <+5>:     48 89 e5                mov    rbp,rsp
+   0x0000000000402578 <+8>:     53                      push   rbx
+   0x0000000000402579 <+9>:     48 89 fb                mov    rbx,rdi
+   0x000000000040257c <+12>:    48 c1 ef 06             shr    rdi,0x6
+   0x0000000000402580 <+16>:    48 89 d8                mov    rax,rbx
+   0x0000000000402583 <+19>:    48 c1 e8 20             shr    rax,0x20
+   0x0000000000402587 <+23>:    31 c7                   xor    edi,eax
+   0x0000000000402589 <+25>:    48 89 d8                mov    rax,rbx
+   0x000000000040258c <+28>:    48 83 ec 08             sub    rsp,0x8
+   0x0000000000402590 <+32>:    83 e3 38                and    ebx,0x38
+   0x0000000000402593 <+35>:    83 e0 07                and    eax,0x7
+   0x0000000000402596 <+38>:    ff 14 c5 00 5e 40 00    call   QWORD PTR [rax*8+0x405e00]
+   0x000000000040259d <+45>:    35 b2 e0 00 00          xor    eax,0xe0b2
+   0x00000000004025a2 <+50>:    89 c7                   mov    edi,eax
+   0x00000000004025a4 <+52>:    ff 93 00 5e 40 00       call   QWORD PTR [rbx+0x405e00]
+   0x00000000004025aa <+58>:    48 8b 5d f8             mov    rbx,QWORD PTR [rbp-0x8]
+   0x00000000004025ae <+62>:    c9                      leave
+   0x00000000004025af <+63>:    05 63 f2 00 00          add    eax,0xf263
+   0x00000000004025b4 <+68>:    c3                      ret
+End of assembler dump.
+
+
+
+
+
+(gdb) x/8g 0x405e00
+0x405e00 <p6_ops>:      4203808 4203792
+0x405e10 <p6_ops+16>:   4203760 4203872
+0x405e20 <p6_ops+32>:   4203808 4203824
+0x405e30 <p6_ops+48>:   4203824 4203856
+(gdb) disassemble  4203808
+Dump of assembler code for function p6_op_2:
+   0x0000000000402520 <+0>:     endbr64
+   0x0000000000402524 <+4>:     lea    eax,[rdi+0x5954]
+   0x000000000040252a <+10>:    shr    edi,0x2
+   0x000000000040252d <+13>:    xor    eax,edi
+   0x000000000040252f <+15>:    ret
+End of assembler dump.
+(gdb) disassemble 4203792
+Dump of assembler code for function p6_op_1:
+   0x0000000000402510 <+0>:     endbr64
+   0x0000000000402514 <+4>:     mov    eax,edi
+   0x0000000000402516 <+6>:     xor    eax,0x8148
+   0x000000000040251b <+11>:    lea    eax,[rax+rdi*4]
+   0x000000000040251e <+14>:    ret
+End of assembler dump.
+(gdb)  disassemble 4203760
+Dump of assembler code for function p6_op_0:
+   0x00000000004024f0 <+0>:     endbr64
+   0x00000000004024f4 <+4>:     mov    eax,edi
+   0x00000000004024f6 <+6>:     shr    eax,0x2
+   0x00000000004024f9 <+9>:     xor    eax,edi
+   0x00000000004024fb <+11>:    add    eax,0xd7e9
+   0x0000000000402500 <+16>:    ret
+End of assembler dump.
+(gdb)  disassemble 4203872
+Dump of assembler code for function p6_op_5:
+   0x0000000000402560 <+0>:     endbr64
+   0x0000000000402564 <+4>:     mov    eax,edi
+   0x0000000000402566 <+6>:     ror    eax,0x3
+   0x0000000000402569 <+9>:     ret
+End of assembler dump.
+(gdb)  disassemble 4203808
+Dump of assembler code for function p6_op_2:
+   0x0000000000402520 <+0>:     endbr64
+   0x0000000000402524 <+4>:     lea    eax,[rdi+0x5954]
+   0x000000000040252a <+10>:    shr    edi,0x2
+   0x000000000040252d <+13>:    xor    eax,edi
+   0x000000000040252f <+15>:    ret
+End of assembler dump.
+(gdb)  disassemble 4203824
+Dump of assembler code for function p6_op_3:
+   0x0000000000402530 <+0>:     endbr64
+   0x0000000000402534 <+4>:     lea    eax,[rdi+rdi*1+0xbf26]
+   0x000000000040253b <+11>:    lea    edx,[rdi+rdi*4]
+   0x000000000040253e <+14>:    xor    eax,edx
+   0x0000000000402540 <+16>:    ret
+End of assembler dump.
+(gdb)  disassemble 4203824
+Dump of assembler code for function p6_op_3:
+   0x0000000000402530 <+0>:     endbr64
+   0x0000000000402534 <+4>:     lea    eax,[rdi+rdi*1+0xbf26]
+   0x000000000040253b <+11>:    lea    edx,[rdi+rdi*4]
+   0x000000000040253e <+14>:    xor    eax,edx
+   0x0000000000402540 <+16>:    ret
+End of assembler dump.
+(gdb)  disassemble 4203856
+Dump of assembler code for function p6_op_4:
+   0x0000000000402550 <+0>:     endbr64
+   0x0000000000402554 <+4>:     mov    eax,edi
+   0x0000000000402556 <+6>:     rol    eax,0x3
+   0x0000000000402559 <+9>:     xor    eax,0xf36
+   0x000000000040255e <+14>:    ret
+End of assembler dump.

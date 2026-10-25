@@ -1,0 +1,66 @@
+00000000004020f0 <phase_02>:
+  4020f0:       f3 0f 1e fa             endbr64
+  4020f4:       55                      push   rbp
+  4020f5:       48 89 e5                mov    rbp,rsp
+  4020f8:       41 55                   push   r13
+  4020fa:       49 89 f5                mov    r13,rsi
+  4020fd:       be 06 00 00 00          mov    esi,0x6
+  402102:       41 54                   push   r12
+  402104:       49 89 fc                mov    r12,rdi
+  402107:       53                      push   rbx
+  402108:       48 83 ec 28             sub    rsp,0x28
+  40210c:       e8 5f 0b 00 00          call   402c70 <valid_u32_fields>
+  402111:       84 c0                   test   al,al
+  402113:       75 13                   jne    402128 <phase_02+0x38>
+  402115:       31 db                   xor    ebx,ebx
+  402117:       48 8d 65 e8             lea    rsp,[rbp-0x18]
+  40211b:       89 d8                   mov    eax,ebx
+  40211d:       5b                      pop    rbx
+  40211e:       41 5c                   pop    r12
+  402120:       41 5d                   pop    r13
+  402122:       5d                      pop    rbp
+  402123:       c3                      ret
+  402124:       0f 1f 40 00             nop    DWORD PTR [rax+0x0]
+  402128:       89 c3                   mov    ebx,eax
+  40212a:       48 8d 45 d4             lea    rax,[rbp-0x2c]
+  40212e:       48 8d 4d c4             lea    rcx,[rbp-0x3c]
+  402132:       be 7a 31 40 00          mov    esi,0x40317a
+  402137:       50                      push   rax
+  402138:       48 8d 45 d0             lea    rax,[rbp-0x30]
+  40213c:       48 8d 55 c0             lea    rdx,[rbp-0x40]
+  402140:       4c 89 e7                mov    rdi,r12
+  402143:       50                      push   rax
+  402144:       4c 8d 4d cc             lea    r9,[rbp-0x34]
+  402148:       4c 8d 45 c8             lea    r8,[rbp-0x38]
+  40214c:       31 c0                   xor    eax,eax
+  40214e:       e8 8d f0 ff ff          call   4011e0 <__isoc99_sscanf@plt>
+  402153:       5a                      pop    rdx
+  402154:       59                      pop    rcx
+  402155:       83 f8 06                cmp    eax,0x6
+  402158:       75 bb                   jne    402115 <phase_02+0x25>
+  40215a:       4c 89 e8                mov    rax,r13
+  40215d:       8b 75 c0                mov    esi,DWORD PTR [rbp-0x40]
+  402160:       48 c1 e8 0b             shr    rax,0xb
+  402164:       01 c0                   add    eax,eax
+  402166:       0f b6 c0                movzx  eax,al
+  402169:       83 c0 14                add    eax,0x14
+  40216c:       39 c6                   cmp    esi,eax
+  40216e:       75 a5                   jne    402115 <phase_02+0x25>
+  402170:       b9 16 00 00 00          mov    ecx,0x16
+  402175:       ba 01 00 00 00          mov    edx,0x1
+  40217a:       4c 89 e8                mov    rax,r13
+  40217d:       48 d3 e8                shr    rax,cl
+  402180:       83 e0 0f                and    eax,0xf
+  402183:       01 d0                   add    eax,edx
+  402185:       31 f0                   xor    eax,esi
+  402187:       8b 74 95 c0             mov    esi,DWORD PTR [rbp+rdx*4-0x40]
+  40218b:       8d 04 40                lea    eax,[rax+rax*2]
+  40218e:       39 c6                   cmp    esi,eax
+  402190:       75 83                   jne    402115 <phase_02+0x25>
+  402192:       48 83 c2 01             add    rdx,0x1
+  402196:       83 c1 03                add    ecx,0x3
+  402199:       48 83 fa 06             cmp    rdx,0x6
+  40219d:       75 db                   jne    40217a <phase_02+0x8a>
+  40219f:       e9 73 ff ff ff          jmp    402117 <phase_02+0x27>
+
+Disassembly of section .fini:

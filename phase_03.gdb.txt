@@ -1,0 +1,44 @@
+00000000004022b0 <phase_03>:
+  4022b0:       f3 0f 1e fa             endbr64
+  4022b4:       55                      push   rbp
+  4022b5:       48 89 e5                mov    rbp,rsp
+  4022b8:       41 54                   push   r12
+  4022ba:       49 89 f4                mov    r12,rsi
+  4022bd:       be 02 00 00 00          mov    esi,0x2
+  4022c2:       53                      push   rbx
+  4022c3:       48 89 fb                mov    rbx,rdi
+  4022c6:       48 83 ec 10             sub    rsp,0x10
+  4022ca:       e8 a1 09 00 00          call   402c70 <valid_u32_fields>
+  4022cf:       84 c0                   test   al,al
+  4022d1:       75 0d                   jne    4022e0 <phase_03+0x30>
+  4022d3:       31 c0                   xor    eax,eax
+  4022d5:       48 83 c4 10             add    rsp,0x10
+  4022d9:       5b                      pop    rbx
+  4022da:       41 5c                   pop    r12
+  4022dc:       5d                      pop    rbp
+  4022dd:       c3                      ret
+  4022de:       66 90                   xchg   ax,ax
+  4022e0:       31 c0                   xor    eax,eax
+  4022e2:       48 8d 4d ec             lea    rcx,[rbp-0x14]
+  4022e6:       48 8d 55 e8             lea    rdx,[rbp-0x18]
+  4022ea:       be 86 31 40 00          mov    esi,0x403186
+  4022ef:       48 89 df                mov    rdi,rbx
+  4022f2:       e8 e9 ee ff ff          call   4011e0 <__isoc99_sscanf@plt>
+  4022f7:       83 f8 02                cmp    eax,0x2
+  4022fa:       75 d7                   jne    4022d3 <phase_03+0x23>
+  4022fc:       44 89 e7                mov    edi,r12d
+  4022ff:       31 c0                   xor    eax,eax
+  402301:       83 e7 07                and    edi,0x7
+  402304:       39 7d e8                cmp    DWORD PTR [rbp-0x18],edi
+  402307:       75 cc                   jne    4022d5 <phase_03+0x25>
+  402309:       4c 89 e0                mov    rax,r12
+  40230c:       4c 89 e6                mov    rsi,r12
+  40230f:       48 c1 e8 03             shr    rax,0x3
+  402313:       48 c1 ee 20             shr    rsi,0x20
+  402317:       31 c6                   xor    esi,eax
+  402319:       e8 32 ff ff ff          call   402250 <p3_dispatch>
+  40231e:       39 45 ec                cmp    DWORD PTR [rbp-0x14],eax
+  402321:       0f 94 c0                sete   al
+  402324:       eb af                   jmp    4022d5 <phase_03+0x25>
+
+Disassembly of section .fini:

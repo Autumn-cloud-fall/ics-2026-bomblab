@@ -1,0 +1,88 @@
+Dump of assembler code for function phase_04:                                                                                                                                      
+   0x00000000004023a0 <+0>:     f3 0f 1e fa             endbr64                                                                                                                    
+   0x00000000004023a4 <+4>:     55                      push   rbp                                                                                                                 
+   0x00000000004023a5 <+5>:     48 89 e5                mov    rbp,rsp                                                                                                             
+   0x00000000004023a8 <+8>:     41 54                   push   r12                                                                                                                 
+   0x00000000004023aa <+10>:    49 89 f4                mov    r12,rsi                                                                                                             
+   0x00000000004023ad <+13>:    be 01 00 00 00          mov    esi,0x1                                                                                                             
+   0x00000000004023b2 <+18>:    53                      push   rbx                                                                                                                 
+   0x00000000004023b3 <+19>:    48 89 fb                mov    rbx,rdi                                                                                                             
+   0x00000000004023b6 <+22>:    48 83 ec 10             sub    rsp,0x10                                                                                                            
+   0x00000000004023ba <+26>:    e8 b1 08 00 00          call   0x402c70 <valid_u32_fields>                                                                                         
+   0x00000000004023bf <+31>:    84 c0                   test   al,al                                                                                                               
+   0x00000000004023c1 <+33>:    75 0d                   jne    0x4023d0 <phase_04+48>                                                                                              
+   0x00000000004023c3 <+35>:    48 83 c4 10             add    rsp,0x10                                                                                                            
+   0x00000000004023c7 <+39>:    31 c0                   xor    eax,eax                                                                                                             
+   0x00000000004023c9 <+41>:    5b                      pop    rbx                                                                                                                 
+   0x00000000004023ca <+42>:    41 5c                   pop    r12                                                                                                                 
+   0x00000000004023cc <+44>:    5d                      pop    rbp                                                                                                                 
+   0x00000000004023cd <+45>:    c3                      ret                                                                                                                        
+   0x00000000004023ce <+46>:    66 90                   xchg   ax,ax                                                                                                               
+   0x00000000004023d0 <+48>:    31 c0                   xor    eax,eax                                                                                                             
+   0x00000000004023d2 <+50>:    48 8d 55 ec             lea    rdx,[rbp-0x14]                                                                                                      
+   0x00000000004023d6 <+54>:    be 89 31 40 00          mov    esi,0x403189                                                                                                        
+   0x00000000004023db <+59>:    48 89 df                mov    rdi,rbx                                                                                                             
+   0x00000000004023de <+62>:    e8 fd ed ff ff          call   0x4011e0 <__isoc99_sscanf@plt>                                                                                      
+   0x00000000004023e3 <+67>:    83 f8 01                cmp    eax,0x1                                                                                                             
+   0x00000000004023e6 <+70>:    75 db                   jne    0x4023c3 <phase_04+35>                                                                                              
+   0x00000000004023e8 <+72>:    4c 89 e1                mov    rcx,r12                                                                                                             
+   0x00000000004023eb <+75>:    4c 89 e0                mov    rax,r12                                                                                                             
+--Type <RET> for more, q to quit, c to continue without paging--c                                                                                                                  
+   0x00000000004023ee <+78>:    44 89 e7                mov    edi,r12d                                                                                                            
+   0x00000000004023f1 <+81>:    31 f6                   xor    esi,esi                                                                                                             
+   0x00000000004023f3 <+83>:    48 c1 e8 20             shr    rax,0x20                                                                                                            
+   0x00000000004023f7 <+87>:    48 c1 e9 07             shr    rcx,0x7                                                                                                             
+   0x00000000004023fb <+91>:    83 e7 7f                and    edi,0x7f                                                                                                            
+   0x00000000004023fe <+94>:    ba 7f 00 00 00          mov    edx,0x7f                                                                                                            
+   0x0000000000402403 <+99>:    31 c1                   xor    ecx,eax                                                                                                             
+   0x0000000000402405 <+101>:   e8 26 ff ff ff          call   0x402330 <p4_walk>                                                                                                  
+   0x000000000040240a <+106>:   39 45 ec                cmp    DWORD PTR [rbp-0x14],eax                                                                                            
+   0x000000000040240d <+109>:   0f 94 c0                sete   al                                                                                                                  
+   0x0000000000402410 <+112>:   48 83 c4 10             add    rsp,0x10                                                                                                            
+   0x0000000000402414 <+116>:   5b                      pop    rbx                                                                                                                 
+   0x0000000000402415 <+117>:   41 5c                   pop    r12                                                                                                                 
+   0x0000000000402417 <+119>:   5d                      pop    rbp                                                                                                                 
+   0x0000000000402418 <+120>:   c3                      ret                                                                                                                        
+End of assembler dump.
+
+Dump of assembler code for function p4_walk:
+   0x0000000000402330 <+0>:     f3 0f 1e fa             endbr64
+   0x0000000000402334 <+4>:     89 f8                   mov    eax,edi
+   0x0000000000402336 <+6>:     89 d7                   mov    edi,edx
+   0x0000000000402338 <+8>:     29 f7                   sub    edi,esi
+   0x000000000040233a <+10>:    d1 ef                   shr    edi,1
+   0x000000000040233c <+12>:    01 f7                   add    edi,esi
+   0x000000000040233e <+14>:    39 c7                   cmp    edi,eax
+   0x0000000000402340 <+16>:    74 4e                   je     0x402390 <p4_walk+96>
+   0x0000000000402342 <+18>:    55                      push   rbp
+   0x0000000000402343 <+19>:    48 89 e5                mov    rbp,rsp
+   0x0000000000402346 <+22>:    53                      push   rbx
+   0x0000000000402347 <+23>:    8d 1c 0f                lea    ebx,[rdi+rcx*1]
+   0x000000000040234a <+26>:    48 83 ec 08             sub    rsp,0x8
+   0x000000000040234e <+30>:    39 f8                   cmp    eax,edi
+   0x0000000000402350 <+32>:    72 1e                   jb     0x402370 <p4_walk+64>
+   0x0000000000402352 <+34>:    8d 77 01                lea    esi,[rdi+0x1]
+   0x0000000000402355 <+37>:    89 c7                   mov    edi,eax
+   0x0000000000402357 <+39>:    e8 d4 ff ff ff          call   0x402330 <p4_walk>
+   0x000000000040235c <+44>:    8d 04 80                lea    eax,[rax+rax*4]
+   0x000000000040235f <+47>:    31 d8                   xor    eax,ebx
+   0x0000000000402361 <+49>:    48 8b 5d f8             mov    rbx,QWORD PTR [rbp-0x8]
+   0x0000000000402365 <+53>:    c9                      leave
+   0x0000000000402366 <+54>:    83 f0 1d                xor    eax,0x1d
+   0x0000000000402369 <+57>:    c3                      ret
+   0x000000000040236a <+58>:    66 0f 1f 44 00 00       nop    WORD PTR [rax+rax*1+0x0]
+   0x0000000000402370 <+64>:    8d 57 ff                lea    edx,[rdi-0x1]
+   0x0000000000402373 <+67>:    89 c7                   mov    edi,eax
+   0x0000000000402375 <+69>:    e8 b6 ff ff ff          call   0x402330 <p4_walk>
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x000000000040237a <+74>:    8d 04 80                lea    eax,[rax+rax*4]
+   0x000000000040237d <+77>:    31 d8                   xor    eax,ebx
+   0x000000000040237f <+79>:    48 8b 5d f8             mov    rbx,QWORD PTR [rbp-0x8]
+   0x0000000000402383 <+83>:    c9                      leave
+   0x0000000000402384 <+84>:    83 f0 08                xor    eax,0x8
+   0x0000000000402387 <+87>:    c3                      ret
+   0x0000000000402388 <+88>:    0f 1f 84 00 00 00 00 00 nop    DWORD PTR [rax+rax*1+0x0]
+   0x0000000000402390 <+96>:    8d 87 d6 00 00 00       lea    eax,[rdi+0xd6]
+   0x0000000000402396 <+102>:   31 c8                   xor    eax,ecx
+   0x0000000000402398 <+104>:   c3                      ret
+End of assembler dump.
